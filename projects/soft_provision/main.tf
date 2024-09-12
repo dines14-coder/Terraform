@@ -12,6 +12,7 @@ resource "aws_instance" "ec2" {
   ami                     = lookup(var.Amis, var.Aws_region)
   instance_type           = "t2.micro"
   key_name = aws_key_pair.ssh_key.key_name
+  
   provisioner "file" {
     source = "installngnix.sh"
     destination = "/tmp/installngnix.sh" 
