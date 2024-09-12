@@ -5,7 +5,7 @@
 
 resource "aws_key_pair" "ssh_key" {
   key_name = "created_key"
-  public_key = "${var.path_to_pubkey}"
+  public_key = file(var.path_to_pubkey)
 }
 
 resource "aws_instance" "ec2" {
@@ -27,7 +27,7 @@ resource "aws_instance" "ec2" {
   connection {
     host = coalesce(self.public_ip, self.private_ip)
     type = "ssh"
-    private_key = "${var.path_to_prikey}"
+    private_key = file(var.path_to_prikey)
   }
 
 }
