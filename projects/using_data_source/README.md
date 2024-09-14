@@ -15,6 +15,6 @@
   }
 
 # wildcard :
-  this '*' symbol is called the wildcard. we use it for our flexibility. if we dont know or not sure about the next part of the or something, we can use this * . This will bring the possible fields to it
-    # for eg.., we can write the redhat name like this RHEL-9.4.0_HVM- "*"  this will attach the possible suffix
+  this * symbol is called the wildcard. we use it for our flexibility. if we dont know or not sure about the next part of the or something, we can use this * . This will bring the possible fields to it
+    # for eg.., we can write the redhat name like this RHEL-9.4.0_HVM- *  this will attach the possible suffix
 
