@@ -9,7 +9,7 @@
 # filter{
     name = "name"
     values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]       
-     # we need to give the ami name .[eg. ubuntu,redhat, amazon-linux etc..,] we can refer documents
+     # we need to give the ami name .[eg. ubuntu,redhat, amazon-linux etc..,] we can refer documents to write this value
      document link - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html
 
   }
