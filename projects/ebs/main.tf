@@ -4,7 +4,7 @@ resource "aws_ebs_volume" "EBS-1" {
   availability_zone = var.aws_az
   size              = 20
   iops = 3000
-  type = gp3
+  type = "gp3"
   throughput = 125
 
   tags = {
@@ -31,9 +31,10 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ebs_ec2" {
-  ami = aws_ami.ubuntu.id
+  ami = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  availability_zone = var.aws_az
+  vpc_security_group_ids = [aws_security_group.tf_ssh.id]
+  subnet_id = aws_subnet.ebs-pubsub1.id
 
   tags = {
     Name = "ebs_attached_instance"
