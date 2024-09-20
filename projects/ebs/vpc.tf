@@ -45,3 +45,9 @@ resource "aws_subnet" "ebs-pubsub1" {
     Name = "Public-subnet-1"
   }
 }
+
+resource "aws_route_table_association" "subnet-association-1" {
+  subnet_id      = aws_subnet.ebs-pubsub1.id
+  route_table_id = aws_route_table.tf-network.id
+}
+
