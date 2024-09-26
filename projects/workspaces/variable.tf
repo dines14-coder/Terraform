@@ -9,13 +9,13 @@ variable "ec2_name" {
 }
 
 
-variable "instancetype" {
+variable "type_of_instance" {
     description = "This is for instance type -eg.'t2.micro'"
     type = map(string)
 
     default = {
-      "dev" = "t2.micro"
-      "stage" = "t2.medium"
-      "prod" = "t3.micro"
+      dev = "t2.micro"
+      stage = "t2.medium"
+      prod = "t3.micro"
     }
 }

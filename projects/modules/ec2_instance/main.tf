@@ -17,7 +17,7 @@ data "aws_ami" "latest-instance" {
 
 resource "aws_instance" "ec2_module" {
     ami = data.aws_ami.latest-instance.id
-    instance_type = var.instancetype
+    instance_type = var.newinstance
 
     tags = {
       name = var.ec2_name
