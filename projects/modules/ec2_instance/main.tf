@@ -1,6 +1,6 @@
 data "aws_ami" "latest-instance" {
     most_recent = true
-    owners = [amazon]
+    owners = ["amazon"]
 
     filter {
       name = "name"
