@@ -1,3 +1,8 @@
+resource "aws_key_pair" "key" {
+key_name = var.keypair
+public_key = file(newkey.pub)  
+}
+
 data "aws_ami" "latest-instance" {
     most_recent = true
     owners = ["amazon"]
@@ -14,12 +19,11 @@ data "aws_ami" "latest-instance" {
   
 }
 
-
 resource "aws_instance" "ec2_module" {
     ami = data.aws_ami.latest-instance.id
     instance_type = var.instancetype
     key_name = var.keypair
-
+    
     tags = {
       name = var.ec2_name
     }

@@ -8,6 +8,8 @@ variable "ec2_name" {
 }
 
 variable "keypair" {
+    default = "newkey.pub"
+    description = "need to create keys in your instance"
 }
 
 variable "instancetype" {
